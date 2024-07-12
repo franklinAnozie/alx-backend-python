@@ -2,17 +2,18 @@
 """ more coroutines """
 
 import asyncio
+from typing import List
 
 wait_random = __import__('0-basic_async_syntax').wait_random
 
 
-async def wait_n(n: int, max_delay: int) -> list[float]:
+async def wait_n(n: int, max_delay: int) -> List[float]:
     """
         takes an int value and sleeps for a random value of seconds
         between 0 and the value
     """
-    ret_val: list[float] = []
-    n_ret_val: list[float] = []
+    ret_val: List[float] = []
+    n_ret_val: List[float] = []
 
     for num in range(n):
         ret_val.append(wait_random(max_delay))
